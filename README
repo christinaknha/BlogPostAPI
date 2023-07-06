@@ -1,0 +1,58 @@
+In order to run the code for this application, user needs to run the BlogPostApiApplication class. 
+
+From there, the code was tested using Postman, an application that the user can install on their computer by going to https://app.getpostman.com/app/download/win64.
+Once PostMan is installed, user can make an account if they would like or they can continue as a guest. 
+
+To view all of the data that is preloaded via the LoadDatabase class, click the dropdown arrow in the area to the left of the "Enter URL or paste text" text and click on GET.
+From there, click on the area that says "Enter URL or paste text" and enter the url localhost:8080/posts.
+Click Send. Data should populate on the bottom half section of the screen. 
+
+To create a new blog post, user can then open a new tab inside the application. 
+They then click the dropdown arrow in the area to the left of the "Enter URL or paste text" text and click on POST.
+From there, click on the area that says "Enter URL or paste text" and enter the url localhost:8080/posts.
+User then clicks on the tab that says "Body" and select the button that says "raw".
+User needs to then click on the dropdown arrow next to Text and select "JSON".
+A code box should have pop up underneath the buttons. User can then enter the data in the format:
+{
+        "title": "Entry 3",
+        "content": "This is my third post",
+        "author": "hanhi"
+    }
+, replacing the text for title, content, and author with their desired text. User can then hit the "Send" Button. 
+To see if a new post was created, user can navigate back to the GET localhost:8080/posts tab and hit the "Send" button.
+User should see a new post added. User should then navigate to a new tab.
+
+In order to view a post based on it's id number, in the new tab, click the dropdown arrow in the area to the left of the "Enter URL or paste text" text and click on GET.
+From there, click on the area that says "Enter URL or paste text" and enter the url in the following format:
+localhost:8080/posts/2
+, replacing the 2 with the id of whichever post they would like to view.
+User can then click Send. Data should populate on the bottom half section of the screen. 
+
+User should then navigate to a new tab to test the update a blog post.
+In order to update a post based on it's id number, in the new tab, click the dropdown arrow in the area to the left of the "Enter URL or paste text" text and click on PUT.
+From there, click on the area that says "Enter URL or paste text" and enter the url in the following format:
+localhost:8080/posts/2
+, replacing the 2 with the id of whichever post they would like to update.
+User then clicks on the tab that says "Body" and select the button that says "raw".
+User needs to then click on the dropdown arrow next to Text and select "JSON".
+A code box should have pop up underneath the buttons. User can then enter the data in the format:
+{
+        "title": "Entry 2",
+        "content": "This is my updated second post",
+        "author": "hanhi"
+    }
+, replacing the text for title, content, and author with their desired updated text. User can then hit the "Send" Button. 
+To see if the post was updated, user can navigate back to the GET localhost:8080/posts tab and hit the "Send" button.
+User should see the updated post under the same id number. User should then navigate to a new tab.
+
+The last function to test is the delete function.
+In the new tab, click the dropdown arrow in the area to the left of the "Enter URL or paste text" text and click on DELETE.
+From there, click on the area that says "Enter URL or paste text" and enter the url in the following format:
+localhost:8080/posts/2
+, replacing the 2 with the id of whichever post they would like to delete.
+From there, click "Send". To see if the post was deleted, user can navigate back to the GET localhost:8080/posts tab and hit the "Send" button.
+User should see the post with the specified id number no longer exists.
+
+DISCLAIMER:
+Once the program is run, user can view data in the browser by navigating to localhost:8080/posts or to view specific preloaded posts by going to localhost:8080/posts/1 or localhost:8080/posts/2.
+Unfortunately, I was unable to get the curl commands to run my create and update functions properly. 
